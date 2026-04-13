@@ -4,12 +4,22 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* ============================================================
+   Phase One Labz — "Electric Blue Biohacking" palette
+   Primary: electric blue #00BFFF / #1E90FF
+   Secondary: sleek cyan #00FFFF
+   Accent: silver white #E2E8F0
+   Dark surface: charcoal #111111 / #1C1C1C
+   Background: #000000 / #09090b
+   Foreground: white / off-white
+   ============================================================ */
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans);
+  --font-sans: var(--font-inter);
   --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-sans);
+  --font-heading: var(--font-montserrat);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -39,6 +49,8 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  --color-slate-brand: var(--slate-brand);
+  --color-slate-brand-foreground: var(--slate-brand-foreground);
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -49,72 +61,72 @@
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  /* Surfaces */
+  --background: hsl(0, 0%, 5%);              /* #0D0D0D */
+  --foreground: hsl(0, 0%, 98%);            /* #FAFAFA */
+  --card: hsl(220, 10%, 10%);               /* Dark Card */
+  --card-foreground: hsl(0, 0%, 98%);
+  --popover: hsl(220, 10%, 10%);
+  --popover-foreground: hsl(0, 0%, 98%);
+
+  /* Primary — Electric Blue */
+  --primary: hsl(195, 100%, 50%);           /* matches vial liquid */
+  --primary-foreground: hsl(0, 0%, 100%);   /* vivid reading */
+
+  /* Secondary — Deep Sky Blue */
+  --secondary: hsl(205, 100%, 40%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+
+  /* Accent — Silver / Subdued blue */
+  --accent: hsl(210, 40%, 20%);
+  --accent-foreground: hsl(0, 0%, 98%);
+
+  /* Muted neutrals */
+  --muted: hsl(220, 15%, 15%);
+  --muted-foreground: hsl(220, 10%, 65%);
+
+  /* Slate brand — replaced with dark sleek elements */
+  --slate-brand: hsl(220, 20%, 8%);
+  --slate-brand-foreground: hsl(0, 0%, 100%);
+
+  /* Structural */
+  --destructive: hsl(0, 84%, 60%);
+  --border: hsl(220, 15%, 20%);
+  --input: hsl(220, 15%, 15%);
+  --ring: hsl(195, 100%, 50%);                   /* focus ring = primary */
+
+  /* Charts */
+  --chart-1: hsl(195, 100%, 50%);
+  --chart-2: hsl(205, 100%, 40%);
+  --chart-3: hsl(210, 80%, 60%);
+  --chart-4: hsl(220, 10%, 30%);
+  --chart-5: hsl(220, 10%, 50%);
+
+  --radius: 0.5rem;
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  /* Keeping same as root for now as we enforce the dark sports aesthetic */
+  --background: hsl(0, 0%, 5%);
+  --foreground: hsl(0, 0%, 98%);
+  --card: hsl(220, 10%, 10%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --popover: hsl(220, 10%, 10%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --primary: hsl(195, 100%, 50%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(205, 100%, 40%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --accent: hsl(210, 40%, 20%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --muted: hsl(220, 15%, 15%);
+  --muted-foreground: hsl(220, 10%, 65%);
+  --slate-brand: hsl(220, 20%, 8%);
+  --slate-brand-foreground: hsl(0, 0%, 100%);
+  --destructive: hsl(0, 84%, 60%);
+  --border: hsl(220, 15%, 20%);
+  --input: hsl(220, 15%, 15%);
+  --ring: hsl(195, 100%, 50%);
 }
 
 @layer base {
@@ -125,6 +137,177 @@
     @apply bg-background text-foreground;
   }
   html {
-    @apply font-sans;
+    @apply font-sans scroll-smooth;
+    color-scheme: dark;
   }
+  h1, h2, h3 {
+    font-family: var(--font-montserrat), sans-serif;
+    letter-spacing: -0.025em;
+  }
+  h1 {
+    letter-spacing: -0.05em;
+    line-height: 1.1;
+    font-weight: 800; /* bold */
+  }
+  h2 {
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    font-weight: 700;
+  }
+  h3 {
+    font-weight: 600;
+  }
+}
+
+/* ============================================================
+   BRAND UTILITY CLASSES
+   High-performance Athletic / Lab aesthetic
+   ============================================================ */
+
+/* Underline-on-hover nav link */
+.nav-link {
+  position: relative;
+  padding: 0.5rem 0;
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: hsl(220, 10%, 75%);
+}
+.nav-link:hover {
+  color: hsl(195, 100%, 60%);
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px; /* bolder underline */
+  width: 0;
+  background: hsl(195, 100%, 50%);
+  transition: width 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Hard-edged dark biohacking card (replaces soft lift) */
+.card-organic {
+  background: hsl(220, 10%, 10%);
+  border: 1px solid hsl(220, 15%, 20%);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease-out;
+}
+.card-organic:hover {
+  border-color: hsl(195, 100%, 50%);
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.8),
+    0 0 16px hsl(195, 100%, 50% / 0.15);
+  transform: translateY(-2px);
+}
+
+/* Staggered entrance animation */
+@keyframes reveal-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-reveal-up {
+  animation: reveal-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Sharp divider */
+.divider-organic {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, hsl(195, 100%, 50% / 0.3), transparent);
+  margin: 3rem 0;
+}
+
+/* Glow shadows */
+.glow-primary {
+  box-shadow:
+    0 0 24px hsl(195, 100%, 50% / 0.35),
+    0 0 60px hsl(195, 100%, 50% / 0.15);
+}
+.glow-primary-hover:hover {
+  box-shadow:
+    0 0 32px hsl(195, 100%, 50% / 0.5),
+    0 0 80px hsl(195, 100%, 50% / 0.3);
+}
+.glow-accent {
+  box-shadow: 0 0 20px hsl(205, 100%, 40% / 0.25);
+}
+
+/* High-tech grid background */
+.gradient-mesh {
+  background-image: 
+    radial-gradient(ellipse at 15% 20%, hsl(195, 100%, 50% / 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 85% 30%, hsl(205, 100%, 40% / 0.1) 0%, transparent 50%),
+    linear-gradient(to right, hsl(220, 15%, 20% / 0.3) 1px, transparent 1px),
+    linear-gradient(to bottom, hsl(220, 15%, 20% / 0.3) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 32px 32px, 32px 32px;
+}
+
+/* Electric blue gradient button */
+@property --btn-pos-x { syntax: "<percentage>"; initial-value: 0%; inherits: false; }
+@property --btn-pos-y { syntax: "<percentage>"; initial-value: 100%; inherits: false; }
+@property --btn-spread-x { syntax: "<percentage>"; initial-value: 150%; inherits: false; }
+@property --btn-spread-y { syntax: "<percentage>"; initial-value: 150%; inherits: false; }
+@property --btn-color-1 { syntax: "<color>"; initial-value: #e6f7ff; inherits: false; }
+@property --btn-color-2 { syntax: "<color>"; initial-value: #66ccff; inherits: false; }
+@property --btn-color-3 { syntax: "<color>"; initial-value: #0099ff; inherits: false; }
+@property --btn-color-4 { syntax: "<color>"; initial-value: #007acc; inherits: false; }
+@property --btn-color-5 { syntax: "<color>"; initial-value: #005c99; inherits: false; }
+
+.gradient-button {
+  position: relative;
+  cursor: pointer;
+  appearance: none;
+  color: #ffffff;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: radial-gradient(
+    var(--btn-spread-x) var(--btn-spread-y) at var(--btn-pos-x) var(--btn-pos-y),
+    var(--btn-color-1) 0%,
+    var(--btn-color-2) 15%,
+    var(--btn-color-3) 40%,
+    var(--btn-color-4) 75%,
+    var(--btn-color-5) 100%
+  );
+  box-shadow: 0 4px 14px 0 rgba(0, 153, 255, 0.39);
+  transition:
+    --btn-pos-x 0.5s,
+    --btn-pos-y 0.5s,
+    --btn-spread-x 0.5s,
+    --btn-spread-y 0.5s,
+    --btn-color-1 0.5s,
+    --btn-color-2 0.5s,
+    --btn-color-3 0.5s,
+    --btn-color-4 0.5s,
+    --btn-color-5 0.5s,
+    box-shadow 0.3s ease;
+}
+.gradient-button:hover {
+  --btn-pos-x: 100%;
+  --btn-pos-y: 0%;
+  --btn-spread-x: 120%;
+  --btn-spread-y: 120%;
+  --btn-color-1: #ffffff;
+  --btn-color-2: #80d4ff;
+  --btn-color-3: #1a0033; /* Darker accent */
+  --btn-color-4: #0088e6;
+  --btn-color-5: #004d80;
+  box-shadow: 0 6px 20px rgba(0, 153, 255, 0.5);
+}
+
+/* Compliance footer disclaimer text */
+.compliance-disclaimer {
+  color: hsl(220, 10%, 45%);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
 }
