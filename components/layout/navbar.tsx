@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Menu, X, FlaskConical, ShoppingCart, Search, Hexagon } from "lucide-react";
+import { Show, UserButton } from "@clerk/nextjs";
 import { navLinks } from "@/lib/constants";
 import { CartDrawer } from "@/components/cart/cart-drawer";
 import { WaitlistInput } from "@/components/ui/waitlist-input";
@@ -102,6 +103,17 @@ export function Navbar() {
               >
                 <ShoppingCart size={20} />
               </button>
+              <Show when="signed-out">
+                <Link
+                  href="/sign-in"
+                  className="hidden sm:inline-flex items-center rounded-full px-4 h-9 text-xs font-bold uppercase tracking-wider border border-border text-foreground hover:border-primary/60 hover:text-primary transition-all whitespace-nowrap"
+                >
+                  Sign in
+                </Link>
+              </Show>
+              <Show when="signed-in">
+                <UserButton appearance={{ elements: { avatarBox: "h-8 w-8" } }} />
+              </Show>
               <button
                 type="button"
                 className="lg:hidden p-2 text-foreground"

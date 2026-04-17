@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Montserrat } from "next/font/google";
+import { ClerkProvider } from "@clerk/nextjs";
 import { CartProvider } from "@/lib/context/cart-context";
 import "./globals.css";
 
@@ -31,9 +32,11 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
-        <CartProvider>
-          {children}
-        </CartProvider>
+        <ClerkProvider>
+          <CartProvider>
+            {children}
+          </CartProvider>
+        </ClerkProvider>
       </body>
     </html>
   );
